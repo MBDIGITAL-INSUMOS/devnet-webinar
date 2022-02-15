@@ -16,7 +16,7 @@ from urllib3.exceptions import InsecureRequestWarning
 
 class CUCMConnectorAXL:
 
-    def __init__(self,CUCM_IP,AXL_Username,AXL_Password,CUCM_Version = '11.5',debug = False,logger = False):
+    def __init__(self,CUCM_IP,AXL_Username,AXL_Password,CUCM_Version = '12.5',debug = False,logger = False):
         """
         Constructor initiates session establishment process when the instance is created
 

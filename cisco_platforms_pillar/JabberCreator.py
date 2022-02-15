@@ -2,21 +2,22 @@ from CUCMConnectorAXL import *
 import logging
 
 class JabberCreator(CUCMConnectorAXL):
-    def add_jabber_device(self, device_name, lines, site, team, username):
+    def add_jabber_device(self, device_name, lines, site, Location, username):
         """
             Creates a Jabber device with the specified settings
             This example takes as default many of the common settings, although it can be adjusted according to your needs
         """
         phone={
                     'name': device_name,
-                    'devicePoolName': f'{site}-DP',
+                    'devicePoolName': f'DP_{site}',
                     'ownerUserName': username,
-                    'description': f'({team}) Remote Agent - Site {site}',
+                    #'description': f'({team}) Remote Agent - Site {site}',
+                    'description': device_name,
                     'product': 'Cisco Unified Client Services Framework',
                     'class': 'Phone',
                     'protocol': 'SIP',
                     'protocolSide': 'User',
-                    'locationName': 'Hub_None',
+                    'locationName': f'LOC_{Location}',
                     'sipProfileName': 'Standard SIP Profile',
                     'commonPhoneConfigName': 'Standard Common Phone Profile',
                     'phoneTemplateName': 'Standard Client Services Framework',
@@ -24,7 +25,7 @@ class JabberCreator(CUCMConnectorAXL):
                     'builtInBridgeStatus': 'Default',
                     'packetCaptureMode': 'None',
                     'certificateOperation': 'No Pending Operation',
-                    'deviceMobilityMode': 'Off',
+                    'deviceMobilityMode': 'Default',
                     'lines': {
                         'line': lines
                     }
