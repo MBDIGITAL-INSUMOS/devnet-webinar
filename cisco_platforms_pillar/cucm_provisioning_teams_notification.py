@@ -62,7 +62,18 @@ def main():
                         'index': '1',
                         'dirn': {
                             'pattern': row[1],
-                            'routePartitionName': row[2]
+                            'description': row[5],
+                            'routePartitionName': row[2],                            
+                            'alertingName': row[5],
+                            'asciiAlertingName': row[5]
+                        }
+                        '': {
+                            '': row[],
+                            '': row[]
+                            '': row[]                            
+                            '': row[]
+                            '': row[]
+                            '': row[]
                         }
                     }
                 ]
